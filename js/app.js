@@ -1,5 +1,9 @@
 console.log("Welcome to notes app");
+
+// to show notes after refresh
 showNotes();
+
+// to add a note in notes section
 let addBtn = document.getElementById('addBtn');
 addBtn.addEventListener("click", function(e){
     let addTxt = document.getElementById("addTxt")
@@ -17,6 +21,8 @@ addBtn.addEventListener("click", function(e){
     showNotes();
 })
 
+
+// to display notes in notes section
 function showNotes() {
     let notes = localStorage.getItem("notes");
     if (notes == null) {
@@ -35,6 +41,9 @@ function showNotes() {
         </div>
       </div>`;
     });
+
+
+    // add html in notes section
     let notesElm = document.getElementById("notes");
     if(notesObj.length!=0)
     {
@@ -46,6 +55,7 @@ function showNotes() {
 }
 
 
+//to delete a note by clicking "delete note"
 function deleteNote(index){
     // console.log("this note is deleted", index);
 
@@ -62,6 +72,7 @@ function deleteNote(index){
 }
 
 
+// search section - display the note with matching searchtext
 let search = document.getElementById('searchTxt');
 search.addEventListener("input", function(){
 
