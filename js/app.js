@@ -31,6 +31,9 @@ function showNotes() {
     else{
         notesObj = JSON.parse(notes);
     }
+
+    
+//this section is added in notes container dynamically
     let html = "";
     notesObj.forEach(function(element, index) {
         html += `<div class="noteCard my-2 mx-2 card" style="width: 18rem;">
@@ -43,7 +46,7 @@ function showNotes() {
     });
 
 
-    // add html in notes section
+// add html in notes section
     let notesElm = document.getElementById("notes");
     if(notesObj.length!=0)
     {
@@ -56,6 +59,7 @@ function showNotes() {
 
 
 //to delete a note by clicking "delete note"
+
 function deleteNote(index){
     // console.log("this note is deleted", index);
 
